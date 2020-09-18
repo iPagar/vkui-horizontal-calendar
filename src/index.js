@@ -8,50 +8,6 @@ import {
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
 
-const itemStyle = {
-	flexShrink: 0,
-	height: 29,
-	width: 29,
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "center",
-	justifyContent: "center",
-	clipPath: "circle()",
-};
-
-const days = (date = new Date()) => {
-	const dates = [];
-
-	for (var i = 0; i < 7; i++) {
-		const result = new Date(date);
-		result.setDate(result.getDate() + i);
-		dates.push(result);
-	}
-
-	return dates;
-};
-
-const getNameOfDay = (day) => {
-	switch (day) {
-		case 0:
-			return "Вс";
-		case 1:
-			return "Пн";
-		case 2:
-			return "Вт";
-		case 3:
-			return "Ср";
-		case 4:
-			return "Чт";
-		case 5:
-			return "Пт";
-		case 6:
-			return "Сб";
-		default:
-			throw new RangeError({ message: "day" });
-	}
-};
-
 const HorizontalCalendar = ({
 	date,
 	choosed = 1,
@@ -68,6 +24,50 @@ const HorizontalCalendar = ({
 			days(date).findIndex((day) => day.toString() === choosedDay) + 1;
 
 		onClick && onClick({ choosedDay, dayNumber });
+	};
+
+	const itemStyle = {
+		flexShrink: 0,
+		height: 29,
+		width: 29,
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "center",
+		clipPath: "circle()",
+	};
+
+	const days = (date = new Date()) => {
+		const dates = [];
+
+		for (let i = 0; i < 7; i++) {
+			const result = new Date(date);
+			result.setDate(result.getDate() + i);
+			dates.push(result);
+		}
+
+		return dates;
+	};
+
+	const getNameOfDay = (day) => {
+		switch (day) {
+			case 0:
+				return "Вс";
+			case 1:
+				return "Пн";
+			case 2:
+				return "Вт";
+			case 3:
+				return "Ср";
+			case 4:
+				return "Чт";
+			case 5:
+				return "Пт";
+			case 6:
+				return "Сб";
+			default:
+				throw new RangeError({ message: "day" });
+		}
 	};
 
 	return (

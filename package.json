@@ -2,9 +2,10 @@
   "name": "vkui-horizontal-calendar",
   "version": "1.0.1",
   "description": "Компонент VK UI, позволяющий отображать даты на неделю вперед",
+  "main": "dist/main.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --config=prod.config.js",
+    "build": "webpack --config prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pavel Garaev",
@@ -22,15 +23,15 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "react-dom": "^16.13.1",
+    "babel-cli": "^6.26.0",
+    "prop-types": "^15.7.2"
   },
   "dependencies": {
-    "@vkontakte/icons": "^1.41.0",
-    "@vkontakte/vk-bridge": "^2.2.8",
-    "@vkontakte/vkui": "^3.12.6",
-    "babel-cli": "^6.26.0",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@vkontakte/vkui": "^3.12.6",
+    "@vkontakte/vk-bridge": "^2.2.8",
+    "@vkontakte/icons": "^1.41.0"
   }
 }
