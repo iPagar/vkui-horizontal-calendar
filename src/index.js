@@ -9,7 +9,7 @@ import {
 import "@vkontakte/vkui/dist/vkui.css";
 
 const HorizontalCalendar = ({
-	date,
+	date = new Date(),
 	choosed = 1,
 	isDarkWeekend = true,
 	onClick,
@@ -21,7 +21,7 @@ const HorizontalCalendar = ({
 		const choosedDay = e.currentTarget.dataset.day;
 
 		const dayNumber =
-			days(date).findIndex((day) => day.toString() === choosedDay) + 1;
+			days().findIndex((day) => day.toString() === choosedDay) + 1;
 
 		onClick && onClick({ choosedDay, dayNumber });
 	};
@@ -37,7 +37,7 @@ const HorizontalCalendar = ({
 		clipPath: "circle()",
 	};
 
-	const days = (date = new Date()) => {
+	const days = () => {
 		const dates = [];
 
 		for (let i = 0; i < 7; i++) {

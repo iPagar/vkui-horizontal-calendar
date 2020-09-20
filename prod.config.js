@@ -21,6 +21,9 @@ module.exports = {
     ],
   },
   externals: {
-    react: "commonjs react",
+    react: "react",
+    "@vkontakte/vkui": "@vkontakte/vkui",
+    "@vkontakte/vk-bridge": "@vkontakte/vk-bridge",
+    "@vkontakte/icons": "@vkontakte/icons",
   },
 };
