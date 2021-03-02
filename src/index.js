@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import {
 	HorizontalScroll,
 	getClassName,
-	usePlatform,
+	withPlatform,
 	Headline,
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
@@ -13,9 +13,9 @@ const HorizontalCalendar = ({
 	date = new Date(),
 	choosed = 1,
 	isDarkWeekend = true,
+	platform,
 	onClick,
 }) => {
-	const platform = usePlatform();
 	const baseClassNames = getClassName("Card", platform);
 
 	const onItemClick = (e) => {
@@ -136,7 +136,8 @@ HorizontalCalendar.propTypes = {
 	date: PropTypes.instanceOf(Date),
 	isDarkWeekend: PropTypes.bool,
 	choosed: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+	platform: PropTypes.string,
 	onClick: PropTypes.func,
 };
 
-export default HorizontalCalendar;
+export default withPlatform(HorizontalCalendar);
