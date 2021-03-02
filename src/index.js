@@ -7,6 +7,7 @@ import {
 	Headline,
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
+import "./main.css";
 
 const HorizontalCalendar = ({
 	date = new Date(),
@@ -83,17 +84,14 @@ const HorizontalCalendar = ({
 					display: "flex",
 				}}
 			>
-				{days(date).map((day, i) => {
+				{days().map((day, i) => {
 					const dayNumber = day.getDay();
 
 					return (
 						<div
 							key={day.toString()}
+							className="day"
 							style={{
-								padding: 12,
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "center",
 								color:
 									isDarkWeekend &&
 									(dayNumber === 0 || dayNumber === 6)
