@@ -33,7 +33,8 @@
   "dependencies": {
     "@vkontakte/icons": "^1.79.0",
     "@vkontakte/vk-bridge": "^2.4.1",
-    "@vkontakte/vkui": "^4.2.0",
+    "@vkontakte/vkjs": "^0.21.0",
+    "@vkontakte/vkui": "^4.4.0",
     "react": "^17.0.1"
   }
 }
