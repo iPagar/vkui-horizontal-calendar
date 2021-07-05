@@ -13,6 +13,7 @@ const HorizontalCalendar = ({
 	date = new Date(),
 	choosed = 1,
 	isDarkWeekend = true,
+	mondayFirst = false, 
 	platform,
 	onClick,
 }) => {
@@ -50,6 +51,23 @@ const HorizontalCalendar = ({
 		return dates;
 	};
 
+	const daysMondayFirst = () => {
+		const dates = []
+	
+		const selected = new Date(date)
+
+		const fromMonday = selected.getDay() ? selected.getDay() - 1 : 6
+		const monday = selected.setDate(selected.getDate() - fromMonday)
+
+		for (let i = 0; i < 7; i++) {
+			const result = new Date(monday);
+			result.setDate(result.getDate() + i);
+			dates.push(result);
+		}
+	
+		return dates
+	}
+
 	const getNameOfDay = (day) => {
 		switch (day) {
 			case 0:
@@ -71,6 +89,8 @@ const HorizontalCalendar = ({
 		}
 	};
 
+	const adays = mondayFirst ? daysMondayFirst() : days() 
+
 	return (
 		<HorizontalScroll
 			style={{
@@ -84,7 +104,7 @@ const HorizontalCalendar = ({
 					display: "flex",
 				}}
 			>
-				{days().map((day, i) => {
+				{adays.map((day, i) => {
 					const dayNumber = day.getDay();
 
 					return (
