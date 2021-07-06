@@ -27,12 +27,13 @@ const TestView = () => {
 			<Panel id="main">
 				<PanelHeader>VKUI Horizontal Calendar</PanelHeader>
 				<HorizontalCalendar
-					date={new Date("2020-9-17")}
+					date={new Date("2021-7-04")}
 					choosed={choosed}
 					isDarkWeekend={true}
 					onClick={({ choosedDay, dayNumber }) => {
 						setChoosed(dayNumber);
 					}}
+					mondayFirst
 				/>
 				<Div>
 					<Button size="l" onClick={changeTheme} stretched>
