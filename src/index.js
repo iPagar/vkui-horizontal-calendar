@@ -19,8 +19,6 @@ const HorizontalCalendar = ({
 }) => {
 	const baseClassNames = getClassName("Card", platform);
 
-	const adays = mondayFirst ? daysMondayFirst() : days() 
-
 	const onItemClick = (e) => {
 		const choosedDay = e.currentTarget.dataset.day;
 
@@ -91,7 +89,7 @@ const HorizontalCalendar = ({
 		}
 	};
 
-	
+	const adays = mondayFirst ? daysMondayFirst() : days() 
 
 	return (
 		<HorizontalScroll
