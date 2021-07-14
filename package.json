@@ -1,6 +1,6 @@
 {
   "name": "vkui-horizontal-calendar",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Компонент VK UI, позволяющий отображать даты на неделю вперед",
   "main": "dist/main.js",
   "scripts": {
